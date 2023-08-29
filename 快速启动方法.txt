@@ -1,0 +1,5 @@
+1. 执行 init.sh
+
+2. 执行 shell.sh
+
+3. npm start 

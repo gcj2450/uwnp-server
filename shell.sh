@@ -5,3 +5,4 @@ envName=${userEnvName:-"default"}
 rm -f -r ./config/
 cp -R ./configThemes/"${envName}"/ ./config/
 echo -e ${envName} "setup!"
+read -p "config ok, press any key to exit~"
