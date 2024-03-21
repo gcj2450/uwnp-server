@@ -11,6 +11,11 @@ class TestController extends ControllerBase {
     console.log(uid, "offline ~");
   }
 
+  entry(session, packObj, next){
+    //user entry,online
+    console.log(session.uid, "online ~");
+  }
+
   /**request/response API
    * 
    * @param {*} session {uid}
@@ -28,6 +33,7 @@ class TestController extends ControllerBase {
   /**notify API */
   testB(session, packObj) {
     //1表示玩家uid，收到testB的通知，並發推送給client
+    console.log("get testB notify"+this.channel===null);
     this.channel.sendToUids([1], 'TestController.testOn', { info: "ss" });
   }
 

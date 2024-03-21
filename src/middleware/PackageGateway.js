@@ -50,7 +50,7 @@ class PackageGateway {
   next(context, next) {
     let req = context.request;
     let session = context.session;
-
+    // this.app.plugins.channel.bind(session.uid,session);
     let controller = req.controller;
     let method = req.method;
     let info = req.info;

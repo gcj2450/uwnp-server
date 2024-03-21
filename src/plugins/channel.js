@@ -25,7 +25,12 @@ class Channel {
   * @returns {boolean} 回傳綁定是否成功
   */
   bind(uid, session) {
-    this.usersSession.set(uid, session);
+    if (!this.usersSession.has(uid)){
+      console.log("HHHHHHHHHHH");
+      this.usersSession.set(uid, session);
+    }
+    else
+      console.log("GGGGGGGGGGG");
     return this.usersSession.has(uid);
   }
 
@@ -50,9 +55,11 @@ class Channel {
     let noUser = [];
     uids.forEach(uid => {
       if (this.usersSession.get(uid)) {
+        console.log("AAAAAAAAdddddddddddddd");
         this.send(this.usersSession.get(uid), route, info, proto);
       }
       else {
+        console.log("dddddffffffffffffffffff");
         noUser.push(uid);
       }
     });
